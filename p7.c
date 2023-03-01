@@ -26,9 +26,9 @@ int main (void)
     for (i = 0; i < n; i++)
     print_person_info(student[i]);
 
-    // sort_by_age(n, student);
+    sort_by_age(n, student);
     
-    printf("----- After Sorting ------\n");
+    printf("------ After Sorting ------\n");
 
     for (i = 0; i < n; i++)
         print_person_info(student[i]);
@@ -42,10 +42,23 @@ void print_person_info(struct person clone)
     printf("Name = %s %s. Age = %i\n", clone.first_name, clone.last_name, clone.age);
 
 }
-/*
-void sort_by_age(int n, struct person [])
-{
 
+void sort_by_age(int n, struct person a[])
+{
+    int i, j;
+    struct person temp;
+
+    for (i = 0; i < n-1; i++)
+    {
+        for (j = i+1; j < n; j++)
+        {
+            if (a[i].age > a[j].age)
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
 
 }
-*/
