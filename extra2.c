@@ -23,6 +23,7 @@ int main (void)
     {
         printf("%d",binary_num[j]);
     }
+    printf("\n");
 
     return 0;
 }
